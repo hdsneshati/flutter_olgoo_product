@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localisation/flutter_localisation.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_olgoo_product/config/asset/theme/theme_data.dart';
 import 'package:flutter_olgoo_product/config/routing/routes.dart';
 import 'package:flutter_olgoo_product/core/dependency_injection/locator.dart';
@@ -47,8 +48,8 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: const [
             PersianMaterialLocalizations.delegate,
             PersianCupertinoLocalizations.delegate,
-           // GlobalMaterialLocalizations.delegate,
-           // GlobalWidgetsLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
             // GlobalCupertinoLocalizations.delegate,
           ],
         );

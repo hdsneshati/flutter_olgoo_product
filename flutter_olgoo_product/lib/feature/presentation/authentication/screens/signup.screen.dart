@@ -15,6 +15,8 @@ class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
   final TextEditingController companyNameController = TextEditingController();
   final TextEditingController ownerNameController = TextEditingController();
+  final TextEditingController cityNameController = TextEditingController();
+  final TextEditingController locationNameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -53,8 +55,8 @@ class SignupScreen extends StatelessWidget {
                 PrimaryTextBox(
                     controller: companyNameController,
                     iconPath: IconPath.company,
-                    title: "نام تولیدی",
-                    hint: "نام تولیدی یا برندتون رو وارد کنید"),
+                    title: "نام کسب و کار",
+                    hint: "نام  برندتون رو وارد کنید"),
                 8.0.verticalSpace,
                 PrimaryTextBox(
                     controller: ownerNameController,
@@ -62,6 +64,19 @@ class SignupScreen extends StatelessWidget {
                     title: "نام و نام خانوادگی",
                     hint: "اسم خودتون رو وارد کنید"),
                 8.0.verticalSpace,
+                PrimaryTextBox(
+                    controller: cityNameController,
+                    iconPath: IconPath.profile,
+                    title: "  شهر ",
+                    hint: "اسم شهرتون رو وارد کنید"),
+                8.0.verticalSpace,
+                PrimaryTextBox(
+                    controller: locationNameController,
+                    iconPath: IconPath.profile,
+                    title: "  آدرس(دلخواه) ",
+                    hint: "آدرستون  رو وارد کنید"),
+                8.0.verticalSpace,
+
                 (MediaQuery.of(context).size.height * 0.41).verticalSpace,
                 //! action button ----------------------------------------------
                 BlocConsumer<AuthBloc, AuthState>(
@@ -88,7 +103,7 @@ class SignupScreen extends StatelessWidget {
                             isPrimaryColor: true,
                             child: state.status is! LoadingAuthStatus
                                 ? Text(
-                                    "بزن بریم",
+                                    "ادامه ",
                                     style:
                                         Theme.of(context).textTheme.labelLarge,
                                   )
