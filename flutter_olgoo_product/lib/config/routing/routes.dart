@@ -17,6 +17,15 @@ final GoRouter routs =
     name: "/login",
     builder: (context, state) => const LoginScreen(),
   ),
+    GoRoute(
+      path: '/otp',
+      name: "/otp",
+      builder: (context, state) {
+        final String userPhoneNumber = state.extra as String;
+        return OtpScreen(
+          userPhoneNumber: userPhoneNumber,
+        );
+      }),
   GoRoute(
     path: '/signup',
     name: "/signup",
